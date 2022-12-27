@@ -1,0 +1,6 @@
+name: StayYoung
+version: '${version}'
+main: nl.vloedje.stayyoung.Main
+api-version: 1.19
+authors: [ EEstar ]
+website: https://vloedje.nl/discord

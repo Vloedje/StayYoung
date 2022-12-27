@@ -1,0 +1,6 @@
+---
+debug: false
+trigger_item: POISONOUS_POTATO
+success_sound: ENTITY_EXPERIENCE_ORB_PICKUP
+success_particle: VILLAGER_HAPPY
+failure_sound: ENTITY_PLAYER_BURP

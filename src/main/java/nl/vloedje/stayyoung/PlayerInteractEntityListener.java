@@ -6,6 +6,7 @@ import org.bukkit.entity.Breedable;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class PlayerInteractEntityListener implements Listener {
 
@@ -40,5 +41,12 @@ public class PlayerInteractEntityListener implements Listener {
         Location loc = event.getRightClicked().getLocation();
         event.getPlayer().spawnParticle(Particle.valueOf(config.getString("success_particle")), loc.getX(), loc.getY() + 0.75, loc.getZ(), 5, 0.5, 0.25, 0.5);
 
+        ItemStack itemInHand = event.getPlayer().getInventory().getItemInMainHand();
+        int amount = itemInHand.getAmount();
+        if (amount > 1) {
+            itemInHand.setAmount(amount - 1);
+        } else {
+            event.getPlayer().getInventory().setItemInMainHand(null);
+        }
     }
 }
